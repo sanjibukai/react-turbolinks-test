@@ -26,10 +26,8 @@ Hello.propTypes = {
 //   }
 // })
 
-document.addEventListener('turbolinks:load', () => {
-  console.log("DOM loaded..");
+  console.log("ReactDOM rendered..");
   ReactDOM.render(
     <Hello name="React" />,
     document.body.appendChild(document.createElement('div')),
   )
-})
