@@ -14,4 +14,4 @@
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
 
-<%= javascript_pack_tag("hello_react") %>
+<%= content_for :javascript_pack, javascript_pack_tag("hello_react") %>

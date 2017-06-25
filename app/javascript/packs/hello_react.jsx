@@ -26,8 +26,15 @@ Hello.propTypes = {
 //   }
 // })
 
-  console.log("ReactDOM rendered..");
-  ReactDOM.render(
-    <Hello name="React" />,
-    document.body.appendChild(document.createElement('div')),
-  )
+var div = document.createElement('div')
+
+console.log("ReactDOM rendered..");
+ReactDOM.render(
+  <Hello name="React" />,
+  document.body.appendChild(div),
+)
+
+document.addEventListener('turbolinks:before-cache', () => {
+  console.log("Div unmounted..");
+  ReactDOM.unmountComponentAtNode(div);
+})
