@@ -18,18 +18,19 @@ Hello.propTypes = {
   name: PropTypes.string
 }
 
-// document.addEventListener('turbolinks:load', () => {
-//   console.log("DOM loaded..");
-//   var element = document.getElementById("hello");
-//   if(element) {
-//     ReactDOM.render(<Hello name="React" />, element)
-//   }
-// })
-
 document.addEventListener('turbolinks:load', () => {
   console.log("DOM loaded..");
-  ReactDOM.render(
-    <Hello name="React" />,
-    document.body.appendChild(document.createElement('div')),
-  )
+  var element = document.getElementById("hello");
+  if(element) {
+    ReactDOM.render(<Hello name="React" />, element)
+    console.log("ReactDOM rendered..");
+  }
 })
+
+// document.addEventListener('turbolinks:load', () => {
+//   console.log("DOM loaded..");
+//   ReactDOM.render(
+//     <Hello name="React" />,
+//     document.body.appendChild(document.createElement('div')),
+//   )
+// })
